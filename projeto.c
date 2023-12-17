@@ -2,7 +2,13 @@
 #include <stdlib.h>
 #include <locale.h>
 
+void aten(){
 
+printf("\n======================\n");
+printf("\tSeja bem-vindo a pagina do atendente.");
+printf("\n======================\n");
+
+}
 
 void faxina()
 {
@@ -46,20 +52,33 @@ void localizadordelivros()
 {
 
     int esc;
+    int op;
 
-    localizador();
+        printf("VocÃª ja fez seu login?: \n");
+        printf("n\1- sim\n");
+        printf("\n2- NÃ£o\n");
+        scanf("%d", &esc);
+
+
+    switch (esc)
+    {
+    case 1:
+
+    faxina();
+
+     localizador();
     do
     {
 
         printf("\nDigite a categoria desejada!\n\n");
-        printf("\n1 - Ação\n");
+        printf("\n1 - Aï¿½ï¿½o\n");
         printf("\n2 - Comedia.\n");
         printf("\n3- Romance.\n");
         printf("\n4 - Terror.\n");
-        printf("\n5 - Motivação.\n");
+        printf("\n5 - Motivaï¿½ï¿½o.\n");
         printf("\n6 - Sair.\n");
 
-        printf("\nPor favor digite o que você deseja: ");
+        printf("\nPor favor digite o que vocï¿½ deseja: ");
         scanf("%d", &esc);
 
         faxina();
@@ -82,7 +101,7 @@ void localizadordelivros()
             printf("\tLivros disponiveis a baixo:\n");
 
             printf("\nAuto da compadecida | 24 R$\n");
-            printf("\nAs aventuras de Pinóquio | 30 R$");
+            printf("\nAs aventuras de Pinï¿½quio | 30 R$");
 
             break;
 
@@ -102,7 +121,7 @@ void localizadordelivros()
             printf("\tLivros disponiveis a baixo:\n");
 
             printf("\nIt- A Coisa | 50 R$ \n");
-            printf("\nO cemitério maldito | 48 R$");
+            printf("\nO cemitï¿½rio maldito | 48 R$");
             break;
 
         case 5:
@@ -112,7 +131,7 @@ void localizadordelivros()
             printf("\tLivros disponiveis a baixo:\n");
 
             printf("\nArrume sua cama | 46 R$ \n");
-            printf("\nO poder da Ação | 60 R$");
+            printf("\nO poder da Aï¿½ï¿½o | 60 R$");
 
             break;
 
@@ -130,33 +149,96 @@ void localizadordelivros()
             break;
         }
     } while (esc != 5);
+
+    
+    case 2:
+
+    faxina();
+    login();
+        
+        break;
+    
+    default:
+
+    printf("Erro, porfavor tente novamente.");
+
+        main();
+
+        break;
+    }
+
+   
 }
 
 void registro(){
 
-    faxina();
+    int esc;
+    int reg = 0;
+    
 
-    reg();
+        printf("VocÃª ja fez seu login?: \n");
+        printf("n\1- sim\n");
+        printf("\n2- NÃ£o\n");
+        scanf("%d", &esc);
 
-    float reg;
-    int i;
+    switch (esc)
+    {
+    case 1:
 
-        printf("Quantos livros você deseja comprar?");
-        scanf("%f", &reg);
+        faxina();
 
-        for ( i = 0; i < 10; i++)
-        {
-            
-        }
+        printf("Escreva a quantidade de livros que vocÃª deseja comprar?");
+        scanf("%d", &reg);
+
+            atendente(reg);
         
+        break;
+    
+    case 2:
+        faxina();
+        login();
 
-
-
-
+        break;
+    }
 
 
 }
 
+void atendente(int o){
+
+        faxina();
+
+        aten();
+
+    char cpf[200], endereco[200], loc[200], cart[200];
+
+
+
+    printf("\nDigite o numero do seu cartÃ£o: \n");
+    gets(cart);
+
+
+    printf("\n\nDigite o local de entrega: \n\n");
+    gets(loc);
+
+    printf("\nDigite o seu cpf para confirmar a compra: \n");
+    gets(cpf);
+
+
+
+        printf("\nA compra concluida!\n");
+        printf("\n%d Ã© a quantidade de livros que o senhor deseja! \n\n", o);
+
+        printf("\nCompra efetuada com sucesso!\n");
+
+        faxina();
+
+        main();
+
+    
+
+
+}
 
 void login(){
 
@@ -183,8 +265,6 @@ char Senha[200];
   
 }
 
-
-
 int main()
 {
 
@@ -196,7 +276,7 @@ int main()
     printf("\tSeja bem vindo a biblioteca.\n");
     printf("\n==============================\n");
 
-    printf("\nEscolha a opção desejada.\n");
+    printf("\nEscolha a opï¿½ï¿½o desejada.\n");
     printf("\n1- Login\n");
     printf("\n2- Localizador\n");
     printf("\n3- Registro de compras.\n");
@@ -226,7 +306,12 @@ int main()
     faxina();
     registro();
 
-    default:
+
+    case 4:
+
+        faxina();
+        printf("Tenha um bom dia.");
+
         break;
     }
 
