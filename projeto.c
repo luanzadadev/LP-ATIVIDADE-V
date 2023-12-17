@@ -160,9 +160,9 @@ void registro(){
     int reg = 0;
     int p;
 
-        printf("Você ja escolheu o seu livro?");
-        printf("1 - Sim.");
-        printf("2- Não");
+        printf("\nVocê ja escolheu o seu livro?\n");
+        printf("\n1 - Sim.\n");
+        printf("\n2- Não\n");
         scanf("%d", &p);
 
         switch(p){
@@ -313,17 +313,3 @@ int main()
 
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
