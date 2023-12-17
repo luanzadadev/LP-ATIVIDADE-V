@@ -2,6 +2,13 @@
 #include <stdlib.h>
 #include <locale.h>
 
+void HUD(){
+
+    printf("\n==============================\n");
+    printf("\tSeja bem vindo a biblioteca.\n");
+    printf("\n==============================\n");
+}
+
 void aten(){
 
 printf("\n======================\n");
@@ -19,20 +26,10 @@ void faxina()
 
 char LoginS(char *Login, char *Senha)
 {
-    if (strcmp(Login, "Cliente") == 0 && strcmp(Senha, "1234") == 0)
-    {
 
-        
-        return 1;
-    }
-    else
-    {
-        printf("Senha e login, errados.");
-        
-    }
-    
+    return (strcmp(Login, "Cliente") == 0 && strcmp(Senha, "1234") == 0);
 }
-
+    
 void reg(){
 
 
@@ -52,157 +49,141 @@ void localizadordelivros()
 {
 
     int esc;
+    int esq;
     int op;
 
-        printf("Você ja fez seu login?: \n");
-        printf("n\1- sim\n");
-        printf("\n2- Não\n");
-        scanf("%d", &esc);
+      
+    faxina();
 
+        localizador();
+
+    printf("\nDigite a categoria desejada!\n\n");
+    printf("\n1 - Ação\n");
+    printf("\n2 - Comedia.\n");
+    printf("\n3- Romance.\n");
+    printf("\n4 - Terror.\n");
+    printf("\n5 - Motivação.\n");
+    printf("\n6 - Sair.\n");
+
+    printf("\nPor favor, digite a opção desejada: ");
+    scanf("%d", &esc);
+
+    faxina();
 
     switch (esc)
     {
     case 1:
 
-    faxina();
+        printf("\nCategoria de Ação: \n");
 
-     localizador();
-    do
-    {
+        printf("\nLivros disponiveis a baixo:");
 
-        printf("\nDigite a categoria desejada!\n\n");
-        printf("\n1 - A��o\n");
-        printf("\n2 - Comedia.\n");
-        printf("\n3- Romance.\n");
-        printf("\n4 - Terror.\n");
-        printf("\n5 - Motiva��o.\n");
-        printf("\n6 - Sair.\n");
-
-        printf("\nPor favor digite o que voc� deseja: ");
+        printf("\n1- O Hobbit | 50 R$\n");
+        printf("2- Harry Potter e a pedra filosofal | 50 R$");
+        printf("\nQual livro você deseja?: ");
         scanf("%d", &esc);
-
         faxina();
-
-        switch (esc)
-        {
-        case 1:
-
-            printf("\nLocalizado no corredor 1.\n");
-
-            printf("\tLivros disponiveis a baixo:\n");
-
-            printf("\nO Hobbit | 45 R$\n");
-            printf("\nHarry Potter e a pedra filosofal | 50 R$");
-
-        case 2:
-
-            printf("\nLocalizado no corredor 2.\n");
-
-            printf("\tLivros disponiveis a baixo:\n");
-
-            printf("\nAuto da compadecida | 24 R$\n");
-            printf("\nAs aventuras de Pin�quio | 30 R$");
-
-            break;
-
-        case 3:
-
-            printf("\nLocalizado no corredor 3.\n");
-
-            printf("\tLivros disponiveis a baixo:\n");
-
-            printf("\nVermelho, branco e sangue \n");
-            printf("\nVerity");
-
-        case 4:
-
-            printf("\nLocalizado no corredor 4.\n");
-
-            printf("\tLivros disponiveis a baixo:\n");
-
-            printf("\nIt- A Coisa | 50 R$ \n");
-            printf("\nO cemit�rio maldito | 48 R$");
-            break;
-
-        case 5:
-
-            printf("\nLocalizado no corredor 5.\n");
-
-            printf("\tLivros disponiveis a baixo:\n");
-
-            printf("\nArrume sua cama | 46 R$ \n");
-            printf("\nO poder da A��o | 60 R$");
-
-            break;
-
-        case 6:
-
-            break;
-
-        default:
-
-            printf("Erro.");
-
-            faxina();
-
-            printf("Tente novamente.");
-            break;
-        }
-    } while (esc != 5);
-
-    
-    case 2:
-
-    faxina();
-    login();
+        registro();
         
         break;
-    
-    default:
+    case 2:
 
-    printf("Erro, porfavor tente novamente.");
+        printf("\nCategoria de Comédia: \n");
 
-        main();
+        printf("\nLivros disponiveis a baixo:");
+
+        printf("\n1- Auto da compadecida | 30 R$\n");
+        printf("2- As aventuras de Pinóquio | 30 R$");
+        printf("\nQual livro você deseja?: ");
+        scanf("%d", &esc);
+        faxina();
+        registro();
 
         break;
-    }
 
-   
-}
+    case 3:
 
-void registro(){
+        printf("\nCategoria de Romance: \n");
 
-    int esc;
-    int reg = 0;
-    
+        printf("\nLivros disponiveis a baixo:");
 
-        printf("Você ja fez seu login?: \n");
-        printf("n\1- sim\n");
-        printf("\n2- Não\n");
+        printf("\n1- Vermelho, branco e sangue | 70 R$ \n");
+        printf("2- Verity | 70 R$");
+        printf("\nQual livro você deseja?: ");
+        scanf("%d", &esc);
+        faxina();  
+        registro();
+        break;  
+    case 4:
+
+        printf("\nCatergoria de Terror: \n");
+
+        printf("\nLivros disponiveis a baixo:");
+
+        printf("\n1- It- A Coisa | 50 R$ \n");
+        printf("2- O cemitério maldito | 50 R$");
+        printf("\nQual livro você deseja?: ");
+        scanf("%d", &esc);
+        faxina();
+        registro();
+        break;
+
+    case 5:
+
+        printf("\nCategoria de Motivação: \n");
+
+        printf("Livros disponiveis a baixo:");
+
+        printf("\n1- Arrume sua cama | 60 R$ \n");
+        printf("\n2- O poder da Ação | 60 R$");
+        printf("\nQual livro você deseja?: ");
         scanf("%d", &esc);
 
-    switch (esc)
-    {
-    case 1:
+        faxina();
+        registro();
+        break;
+
+        printf("Erro.");
 
         faxina();
 
-        printf("Escreva a quantidade de livros que você deseja comprar?");
+        printf("Tente novamente.");
+        break;
+    
+    
+    }
+    
+    
+    }
+
+void registro(){
+    int reg = 0;
+    int p;
+
+        printf("Você ja escolheu o seu livro?");
+        printf("1 - Sim.");
+        printf("2- Não");
+        scanf("%d", &p);
+
+        switch(p){
+       
+       case 1: 
+        faxina();
+
+        printf("Escreva a quantidade de livros que você escolheu para o registro:  \n");
         scanf("%d", &reg);
+ 
+    faxina();
 
             atendente(reg);
         
-        break;
-    
-    case 2:
-        faxina();
-        login();
+            case 2:
 
-        break;
+            faxina();
+            localizadordelivros();
+
+            }
     }
-
-
-}
 
 void atendente(int o){
 
@@ -224,7 +205,7 @@ void atendente(int o){
     printf("\nDigite o seu cpf para confirmar a compra: \n");
     gets(cpf);
 
-
+        faxina();
 
         printf("\nA compra concluida!\n");
         printf("\n%d é a quantidade de livros que o senhor deseja! \n\n", o);
@@ -233,36 +214,52 @@ void atendente(int o){
 
         faxina();
 
-        main();
+        printf("\tComprovante.\n");
+        printf("\n %s cpf", cpf);
+        printf("\n %s localização.", loc);
+        printf("\nObrigado pela compra, volte sempre!\n");
+
+
+        
+
+        
+
+
 
     
 
 
 }
 
-void login(){
+void login()
+{
 
+    char Login[200];
+    char Senha[200];
 
-char Login[200]; 
-char Senha[200];
+    do
+    {
 
+        printf("\nDigite o seu Login: ");
+        gets(Login);
 
-
-
-
-    printf("Digite o seu Login: ");
-    gets(Login);
-    
-    printf("Digite a sua Senha: ");
-    gets(Senha);
+        printf("Digite a sua Senha: ");
+        gets(Senha);
 
         LoginS(Login, Senha);
-
-        faxina();
-
-        localizadordelivros();
-  
-  
+        if (LoginS(Login, Senha))
+        {
+            printf("Login e senha corretos. Acesso concedido!\n");
+            break;
+            faxina();
+        }
+        else
+        {
+            printf("\nLogin ou senha incorretos. Tente novamente.\n");
+        }
+    } while (1);
+    faxina();
+    int main();
 }
 
 int main()
@@ -272,15 +269,18 @@ int main()
 
     int esc;
 
-    printf("\n==============================\n");
-    printf("\tSeja bem vindo a biblioteca.\n");
-    printf("\n==============================\n");
 
+     HUD();
+    printf("Para proseguir, por favor realize o seu login\n");
+    login();
+
+    faxina();
+    
+    HUD();
     printf("\nEscolha a op��o desejada.\n");
-    printf("\n1- Login\n");
-    printf("\n2- Localizador\n");
-    printf("\n3- Registro de compras.\n");
-    printf("\n4 - Sair.\n\n");
+    printf("\n1- Localizador\n");
+    printf("\n2- Registro de compras.\n");
+    printf("\n3 - Sair.\n\n");
 
     printf("\nDigite sua escolha: \n");
 
@@ -289,25 +289,21 @@ int main()
     switch (esc)
     {
     
-    case 1: 
-    faxina();
-    login();
 
-    break;
     
-    case 2:
+    case 1:
         faxina();
         localizadordelivros();
 
         break;
 
-    case 3:
+    case 2:
 
     faxina();
     registro();
 
 
-    case 4:
+    default:
 
         faxina();
         printf("Tenha um bom dia.");
@@ -317,3 +313,17 @@ int main()
 
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
